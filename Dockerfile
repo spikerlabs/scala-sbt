@@ -5,20 +5,18 @@
 #
 
 # Pull base image
-FROM  openjdk:alpine
+FROM  openjdk:9-jdk-slim
 
 ARG SCALA_VERSION
 ARG SBT_VERSION
 
-ENV SCALA_VERSION ${SCALA_VERSION:-2.12.4}
-ENV SBT_VERSION ${SBT_VERSION:-1.0.4}
+ENV SCALA_VERSION ${SCALA_VERSION:-2.12.6}
+ENV SBT_VERSION ${SBT_VERSION:-1.1.4}
 
 RUN \
   echo "$SCALA_VERSION $SBT_VERSION" && \
-  mkdir -p /usr/lib/jvm/java-1.8-openjdk/jre && \
-  touch /usr/lib/jvm/java-1.8-openjdk/jre/release && \
-  apk add --no-cache bash && \
-  apk add --no-cache curl && \
+  apt-get a -y && \
+  apt-get install -y bash curl openssh-client && \
   curl -fsL http://downloads.typesafe.com/scala/$SCALA_VERSION/scala-$SCALA_VERSION.tgz | tar xfz - -C /usr/local && \
   ln -s /usr/local/scala-$SCALA_VERSION/bin/* /usr/local/bin/ && \
   scala -version && \
