@@ -2,7 +2,7 @@
 # Scala and sbt Dockerfile
 #
 # https://github.com/spikerlabs/scala-sbt (based on https://github.com/hseeberger/scala-sbt)
-#
+# 
 
 # Pull base image
 FROM  openjdk:11-jdk-slim
