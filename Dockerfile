@@ -5,13 +5,13 @@
 # 
 
 # Pull base image
-FROM  openjdk:11-jdk-slim
+FROM  openjdk:11-ea-27-jre-slim
 
 ARG SCALA_VERSION
 ARG SBT_VERSION
 
 ENV SCALA_VERSION ${SCALA_VERSION:-2.12.6}
-ENV SBT_VERSION ${SBT_VERSION:-1.1.6}
+ENV SBT_VERSION ${SBT_VERSION:-1.2.1}
 
 RUN \
   echo "$SCALA_VERSION $SBT_VERSION" && \
