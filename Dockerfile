@@ -5,7 +5,7 @@
 # 
 
 # Pull base image
-FROM  openjdk:11-ea-27-jdk-slim
+FROM  openjdk:11-ea-28-jdk-slim
 
 ARG SCALA_VERSION
 ARG SBT_VERSION
