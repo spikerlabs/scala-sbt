@@ -24,7 +24,7 @@ docker build -t scala-sbt github.com/spikerlabs/scala-sbt
 ```
 Or with specific versions:
 ```
-docker build -t scala-sbt --build-arg SCALA_VERSION=2.12.1 --build-arg SBT-VERSION=0.13.15 github.com/spikerlabs/scala-sbt
+docker build -t scala-sbt --build-arg SCALA_VERSION=2.12.7 --build-arg SBT_VERSION=1.2.6 github.com/spikerlabs/scala-sbt
 ```
 
 ## Usage ##
